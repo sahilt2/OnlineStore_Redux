@@ -2,6 +2,5 @@
 
 ### **FakeStore API**
 
-```shell
-[Products API](https://fakestoreapi.com/products)
-```
+- [FakeStore](https://fakestoreapi.com/)
+- [Products API](https://fakestoreapi.com/products)
