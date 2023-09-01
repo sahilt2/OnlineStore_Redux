@@ -3,5 +3,5 @@
 ### **FakeStore API**
 
 ```shell
-https://fakestoreapi.com/products
+[Products API](https://fakestoreapi.com/products)
 ```
