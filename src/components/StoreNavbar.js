@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Navbar,Nav } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const StoreNavbar = () => {
     return (
@@ -9,8 +10,9 @@ const StoreNavbar = () => {
                     <Navbar.Brand href='/'>Redux Online Store
                     </Navbar.Brand>
                     <Nav className='me-auto'>
-                    <Nav.Link href='/'>Home</Nav.Link>
-                    <Nav.Link href='/cart'>Cart</Nav.Link>
+                        <LinkContainer to='/'><Nav.Link>Home</Nav.Link></LinkContainer>
+                    <LinkContainer to='/cart'><Nav.Link>Cart</Nav.Link></LinkContainer>
+                    
                     </Nav>
                 </Container>
             </Navbar>

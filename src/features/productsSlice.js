@@ -22,7 +22,7 @@ export const productSlice = createSlice({
 // The reducers field lets us define reducers and genrate associated actions
 // This is where direct logic goes.
 
-reducers:{},
+    reducers:{},
 
 // internal changing of the state, not from api
 // reducers:{

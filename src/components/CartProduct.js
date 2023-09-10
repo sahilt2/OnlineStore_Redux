@@ -1,21 +1,13 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useAppDispatch } from '../app/hooks';
-import {addToCart, removeItemFromCart} from "../features/cartSlice";
-import { useLocation } from 'react-router-dom';
+import {removeItemFromCart} from "../features/cartSlice";
 
-const Product = (props) => {
-    const {image, title,price,rating,description, quantity} = props;
+const CartProduct = (props) => {
+    const {image, title,price,rating,description} = props;
     const product = props;
-    const cartItems = props.cartItems;
     const dispatch = useAppDispatch();
-    const location = useLocation();
-   
 
-    const handleAddProduct = () =>{
-        console.log("product",product);
-        dispatch(addToCart(product))
-    }
     const handleRemoveProduct = () =>{
         console.log("product",product);
         dispatch(removeItemFromCart(product))
@@ -29,16 +21,13 @@ const Product = (props) => {
                 <article className='Detail_info'>
                     <div className='Detail_info-header'>
                         <h2>{title}</h2>
-                        <h2>{quantity ? `Quantity: ${quantity}` : ""}</h2>
                     </div>
                     <div className='Detail_info'>
                         <span className='Detail_info-price'>{price}</span>
                         <span className='Detail_info-rating'>Rating:{rating.rate}</span>
                     </div>
                     <p className='Detail_info-description'>{description}</p>
-                    <Button variant="primary" onClick={handleAddProduct}>Add to cart</Button>
-                    {location.pathname === "/cart" && <Button variant='danger' onClick={handleRemoveProduct}>Remove from Cart</Button>}
-                    {(cartItems.length>0 && cartItems.find(item=>item.id === product.id)) && <Button variant='danger' onClick={handleRemoveProduct}>Remove from Cart</Button>}
+                    <Button variant="danger" onClick={handleRemoveProduct}>Remove</Button>
                 </article>
 
             </section>
@@ -46,4 +35,4 @@ const Product = (props) => {
     );
 };
 
-export default Product;
+export default CartProduct;
